@@ -1,7 +1,9 @@
 import React from 'react'
+import SwitchTheme from './SwitchTheme'
 
 type HeaderProps = {
-  isDarkMode: boolean
+  isDarkMode: boolean,
+  setIsDarkMode: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function Header(props: HeaderProps) {
@@ -14,12 +16,13 @@ export default function Header(props: HeaderProps) {
               React Blog
             </a>
           </div>
-          <nav>
+          <nav className='flex items-center'>
             <a href="/" className={`hover:text-[#8168f8] transition ml-8 ${props.isDarkMode ? 'text-white' : 'text-[#323232]'}`}>Item</a>
             <a href="/" className={`hover:text-[#8168f8] transition ml-8 ${props.isDarkMode ? 'text-white' : 'text-[#323232]'}`}>Item</a>
             <a href="/" className={`hover:text-[#8168f8] transition ml-8 ${props.isDarkMode ? 'text-white' : 'text-[#323232]'}`}>Item</a>
             <a href="/" className={`hover:text-[#8168f8] transition ml-8 ${props.isDarkMode ? 'text-white' : 'text-[#323232]'}`}>Item</a>
             <a href="/" className="btn">Learn more</a>
+            <SwitchTheme isDarkMode={props.isDarkMode} setIsDarkMode={props.setIsDarkMode} />
           </nav>
         </div>
       </div>

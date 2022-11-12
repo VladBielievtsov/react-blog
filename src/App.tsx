@@ -9,7 +9,7 @@ function App() {
   return (
     <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
       
-      <Header isDarkMode={isDarkMode} />
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
 
       <main>
         <Home isDarkMode={isDarkMode} />
