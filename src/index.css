@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+  @apply bg-[#8168f8] ml-8 rounded-full px-6 py-2 inline-block hover:bg-[#654cdf] transition text-white font-bold
+}
