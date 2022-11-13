@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SwitchTheme from './SwitchTheme'
 
 type HeaderProps = {
@@ -12,9 +13,9 @@ export default function Header(props: HeaderProps) {
       <div className={`bg-white shadow ${props.isDarkMode ? 'bg-gray-900' : 'bg-white'}`}>
         <div className="container m-auto px-4 py-2 flex items-center justify-between">
           <div>
-            <a href="/" className='text-[#8168f8] text-2xl font-bold'>
+            <Link to="/" className='text-[#8168f8] text-2xl font-bold'>
               React Blog
-            </a>
+            </Link>
           </div>
           <nav className='flex items-center'>
             <a href="/" className={`hover:text-[#8168f8] transition ml-8 ${props.isDarkMode ? 'text-white' : 'text-[#323232]'}`}>Item</a>

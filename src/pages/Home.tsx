@@ -1,34 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import heroImg from '../assets/cat.png'
 
 type HomeProps = {
   isDarkMode: boolean
+  posts: {id: number; title: string; img: string; body: string}[]
 }
 
-const data = [
-  {
-    "id": 1,
-    "title": "How to Start a Make you Own IOS Apps",
-    "img": "../01.png"
-  },
-  {
-    "id": 2,
-    "title": "What is A Computer and How to Use It?",
-    "img": "../02.png"
-  },
-  {
-    "id": 3,
-    "title": "3 Reasons Why Dogs Can't Breathe in Space",
-    "img": "../03.png"
-  },
-  {
-    "id": 4,
-    "title": "Article About How Cats Celebrate Birthdays",
-    "img": "../04.png"
-  }
-]
-
-export default function Home(props: HomeProps) {
+export default function Home(props: HomeProps) {  
   return (
     <div>
       <div className='bg-[#f6c448] pb-16 pt-32 px-4 text-center flex flex-col items-center'>
@@ -42,9 +21,9 @@ export default function Home(props: HomeProps) {
 
       <div className="container px-4 m-auto mt-[100px]">
         <div className='grid grid-cols-3 gap-[20px] auto-rows-fr'>
-          {data.map(post => (
+          {props.posts.map(post => (
             <div className='mb-[40px]' key={post.id}>
-              <a href="/" className='block h-full p-[20px] border border-[#f1f0f0] hover:border-[#8168f8] rounded-[4px] bg-[#fafbfc] transition'>
+              <Link to={`/post/${post.id}`} className='block h-full p-[20px] border border-[#f1f0f0] hover:border-[#8168f8] rounded-[4px] bg-[#fafbfc] transition'>
                 <img 
                   src={post.img} 
                   alt={post.title} 
@@ -54,9 +33,9 @@ export default function Home(props: HomeProps) {
                   {post.title}
                 </h2>
                 <div className='text-[#787c84] text-sm'>September 28, 2022</div>
-              </a>
+              </Link>
             </div>
-          ))}
+          ))} 
         </div>
       </div>
 
